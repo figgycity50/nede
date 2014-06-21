@@ -1,0 +1,21 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+@media(max-width: 767px) {
+	img {
+		width: 100%;
+		}
+}
+
+@media(min-width: 767px) {
+	p {
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+	img {
+		max-width: 1280px;
+		max-height: 720px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
