@@ -44,11 +44,9 @@ function mkArticle (req, res) {
 function handle (req, res) {
 	var fname = "./" + req.url.slice(1, req.url.length);
 	if (fs.existsSync(fname) && !fs.statSync(fname).isDirectory()) {
-		console.log(mime.lookup(req.url));
+		console.log("http request for resource " + fname + ", mimetype " + mime.lookup(req.url));
 		var mimet = mime.lookup(req.url);
-		console.log("passed mimet");
 		res.writeHead(200, {'Content-Type': mimet});
-		console.log("passed header");
 		var fvcCont = fs.readFileSync(fname, {encoding: "UTF8"});
 		res.end(fvcCont);
 	} else if (req.url == "/newf") {
